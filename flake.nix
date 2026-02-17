@@ -8,12 +8,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, fastfetch, nixpkgs, config, lib}:
+  outputs = { self, fastfetch, nixpkgs, lib}:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-
-      cfg = config.programs.fastfetch-magick;
     in {
       # Build
       packages.${system}.fastfetch-magick = pkgs.stdenv.mkDerivation {
