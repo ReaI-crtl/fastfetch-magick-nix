@@ -51,7 +51,7 @@
       };
 
       config = lib.mkIf cfg.enable {
-        environment.systemPackages = [ packages.${system}.fastfetch-magick ];
+        environment.systemPackages = [ self.packages.${system}.fastfetch-magick ];
 
         environment.etc."fastfetch/config.json".text =
           builtins.toJSON cfg.settings;
