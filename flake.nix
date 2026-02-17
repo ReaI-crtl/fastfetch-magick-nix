@@ -40,21 +40,26 @@
       defaultPackage.${system} = self.packages.${system}.fastfetch-magick;
 
       # Options
-      options.programs.fastfetch-magick = {
-        enable = lib.mkEnableOption "Fastfetch Magick";
-
-        settings = lib.mkOption {
-          type = lib.types.attrs;
-          default = {};
-          description = "Fastfetch JSON configuration.";
+      homeModules.default = { config, lib, pkgs, ... }:
+      let
+        cfg = config.programs.fastfetch-magick;
+      in {
+        options.programs.fastfetch-magick = {
+          enable = lib.mkEnableOption "Fastfetch Magick";
+  
+          settings = lib.mkOption {
+            type = lib.types.attrs;
+            default = {};
+            description = "Fastfetch JSON configuration.";
+          };
         };
-      };
-
-      config = lib.mkIf cfg.enable {
-        environment.systemPackages = [ self.packages.${system}.fastfetch-magick ];
-
-        environment.etc."fastfetch/config.json".text =
-          builtins.toJSON cfg.settings;
+  
+        config = lib.mkIf cfg.enable {
+          home.packages = [ self.packages.${system}.fastfetch-magick ];
+  
+          xdg.configFile."fastfetch/config.json".text =
+            builtins.toJSON cfg.settings;
+        };
       };
 
     };
