@@ -58,7 +58,7 @@
           # xdg.configFile."fastfetch/config.json".text =
           #   builtins.toJSON cfg.settings;
 
-          home.file.".config/fastfetch/config.json".text =
+          home.file.".config/fastfetch/config.jsonc".text =
             builtins.toJSON cfg.settings;
         };
       };
