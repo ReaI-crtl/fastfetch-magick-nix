@@ -55,7 +55,10 @@
         config = lib.mkIf cfg.enable {
           home.packages = [ self.packages.${system}.fastfetch-magick ];
   
-          xdg.configFile."fastfetch/config.json".text =
+          # xdg.configFile."fastfetch/config.json".text =
+          #   builtins.toJSON cfg.settings;
+
+          home.file.".config/fastfetch/config.json".text =
             builtins.toJSON cfg.settings;
         };
       };
