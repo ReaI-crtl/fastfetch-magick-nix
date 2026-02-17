@@ -22,6 +22,10 @@
           pkgs.cmake
         ];
 
+        buildInputs = [
+          pkgs.imagemagick
+        ];
+
         src = fastfetch; 
 
         buildPhase = ''
