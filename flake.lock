@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "fastfetch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1770519798,
+        "narHash": "sha256-8TWGN40whBNEMILYOjj+kp+2rVJJq6jh2a1Act+2hJs=",
+        "owner": "reaI-crtl",
+        "repo": "fastfetch",
+        "rev": "772b25bb5284ad6b9063be887439924daf278d99",
+        "type": "github"
+      },
+      "original": {
+        "owner": "reaI-crtl",
+        "repo": "fastfetch",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1771008912,
+        "narHash": "sha256-gf2AmWVTs8lEq7z/3ZAsgnZDhWIckkb+ZnAo5RzSxJg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a82ccc39b39b621151d6732718e3e250109076fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "fastfetch": "fastfetch",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
