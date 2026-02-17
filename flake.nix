@@ -8,7 +8,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, fastfetch, nixpkgs, lib}:
+  outputs = { self, fastfetch, nixpkgs}:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
